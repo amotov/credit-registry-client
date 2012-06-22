@@ -77,6 +77,12 @@
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+            <version>3.3.0-I20070606-0010</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
