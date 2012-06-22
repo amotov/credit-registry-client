@@ -1,0 +1,1 @@
+mvn install:install-file -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.cocoa.macosx.x86_64 -Dversion=3.7.2 -Dpackaging=jar -Dfile=%CD%\swt-3.7.2-cocoa-macosx-x86_64\swt.jar
