@@ -18,22 +18,24 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Sash;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.jface.action.StatusLineManager;
+import org.eclipse.jface.window.ApplicationWindow;
 
 /**
  *
  * @author Admin
  */
 public class Bootstrap {
-
+    
     public static void load() {
-        final Display display = new Display();
-        final Shell shell = new Shell(display);
+        //final Display display = new Display();
+        //final Shell shell = new Shell(display);
         
         /*ClassLoader cl = Bootstrap.class.getClassLoader();
         final Image image = new Image(display, ClassLoader.getSystemResourceAsStream("images/credit.png"));
         shell.setImage(image);*/
         
-        shell.setText(LanguageUtil.get(LocaleUtil.getDefault(), "application-text"));
+        
         
         /*shell.addDisposeListener(new DisposeListener() {
         public void widgetDisposed(DisposeEvent arg0) {
@@ -41,23 +43,29 @@ public class Bootstrap {
         }
         });*/
         
-        SashForm sashForm = new SashForm(shell, SWT.VERTICAL);
+        /*SashForm sashForm = new SashForm(shell, SWT.VERTICAL);
         sashForm.setLayout(new FillLayout());
 
         Composite topComposite = new Composite(sashForm, SWT.NONE);
         topComposite.setLayout(new FillLayout());
         
         Composite bottomComposite = new Composite(sashForm, SWT.NONE);
-        bottomComposite.setLayout(new FillLayout());
+        bottomComposite.setLayout(new FillLayout());*/
         //bottomComposite.setVisible(false);
-    
-        final DocumentAndTabManager documentAndTabManager = new DocumentAndTabManager(topComposite);
-        final WindowAndTabManager windowAndTabManager = new WindowAndTabManager(bottomComposite);
         
-        final ExecutorService executorService = Executors.newFixedThreadPool(100);
-        final TextEditor textEditor = new TextEditor(shell, documentAndTabManager, windowAndTabManager, executorService);
-        textEditor.init();
-        textEditor.run();
+        //final DocumentAndTabManager documentAndTabManager = new DocumentAndTabManager(topComposite);
+        //final WindowAndTabManager windowAndTabManager = new WindowAndTabManager(bottomComposite);
+        
+        //final ExecutorService executorService = Executors.newFixedThreadPool(100);
+        final TextEditor textEditor = new TextEditor(/*shell, documentAndTabManager, windowAndTabManager, executorService*/);
+        textEditor.setBlockOnOpen(true);
+        textEditor.open();
+        Display.getCurrent().dispose();
+        //textEditor.init();
+        /*textEditor.run();*/
+        
+        
+        //Display.getCurrent().dispose();
     }
     
 }

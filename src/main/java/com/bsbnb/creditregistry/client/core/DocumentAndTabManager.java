@@ -69,7 +69,7 @@ public class DocumentAndTabManager {
                 text.setText(document.getContent());
                 tab.setControl(text);
                 if (!document.isTemporary()) {
-                    tab.setText(document.getPath().getName() + "[" + document.getEncoding() + "]");
+                    tab.setText(document.getPath().getName());
                 } else {
                     tab.setText("<Temp>" + document.hashCode());
                 }
